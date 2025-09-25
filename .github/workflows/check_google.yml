@@ -6,7 +6,7 @@ on:
   workflow_dispatch:        
 
 jobs:
-  check-amazon:
+  check-google:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,5 +18,5 @@ jobs:
             echo "Google no responde: Codigo HTTP: $RESPONSE"
             exit 1
           else
-            echo "Hola Mundo: Código HTTP: $RESPONSE"
+            echo "Google Funciona: Código HTTP: $RESPONSE"
           fi
