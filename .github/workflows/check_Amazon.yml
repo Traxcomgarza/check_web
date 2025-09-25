@@ -12,11 +12,11 @@ jobs:
     steps:
       - name: Verificar si Amazon responde correctamente
         run: |
-          URL="https://www.amazon.com"
+          URL="https://www.amazon.com.mx"
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
           if [ "$RESPONSE" -ne 200 ]; then
-            echo "❌ Amazon parece estar caído. Código HTTP: $RESPONSE"
+            echo "Amazon no responde: Codigo HTTP: $RESPONSE"
             exit 1
           else
-            echo "✅ Amazon está funcionando. Código HTTP: $RESPONSE"
+            echo "Hola Mundo: Código HTTP: $RESPONSE"
           fi
