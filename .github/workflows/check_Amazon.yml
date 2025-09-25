@@ -18,5 +18,5 @@ jobs:
             echo "Amazon no responde: Codigo HTTP: $RESPONSE"
             exit 1
           else
-            echo "Hola Mundo: Código HTTP: $RESPONSE"
+            echo "Amazon Funciona: Código HTTP: $RESPONSE"
           fi
