@@ -1,0 +1,22 @@
+name: Check Discord Website
+
+on:
+  schedule:
+    - cron: '*/15 * * * *' 
+  workflow_dispatch:        
+
+jobs:
+  check-discord:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verificar si Discord responde correctamente
+        run: |
+          URL="https://discord.com"
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" "$URL")
+          if [ "$RESPONSE" -ne 200 ]; then
+            echo "Discord no responde: Codigo HTTP: $RESPONSE"
+            exit 1
+          else
+            echo "Discord Funciona: Código HTTP: $RESPONSE"
+          fi
